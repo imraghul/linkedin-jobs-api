@@ -60,6 +60,30 @@ linkedIn.query(queryOptions).then(response => {
 });
 ```
 
+## Localhost Web UI
+
+This repo includes a local web app so you can run searches visually.
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the local UI server:
+
+```bash
+npm run dev:web
+```
+
+3. Open in your browser:
+
+```text
+http://localhost:3000
+```
+
+Use the form to set filters and view jobs as cards with direct LinkedIn links.
+
 ## Query Object Parameters
 
 query() accepts a _queryOptions_ object and returns an array of _Job_ objects.

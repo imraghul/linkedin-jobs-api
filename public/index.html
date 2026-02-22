@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedIn Jobs Local UI</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <h1>LinkedIn Jobs Explorer</h1>
+        <p>Run local searches against your existing API and browse results visually.</p>
+      </header>
+
+      <section class="search-panel">
+        <form id="searchForm">
+          <div class="grid">
+            <label>
+              Keyword
+              <input name="keyword" type="text" placeholder="Software Engineer" />
+            </label>
+            <label>
+              Location
+              <input name="location" type="text" placeholder="United States" />
+            </label>
+            <label>
+              Date Posted
+              <select name="dateSincePosted">
+                <option value="">Any time</option>
+                <option value="24hr">Past 24 hours</option>
+                <option value="past week">Past week</option>
+                <option value="past month">Past month</option>
+              </select>
+            </label>
+            <label>
+              Job Type
+              <select name="jobType">
+                <option value="">Any type</option>
+                <option value="full time">Full time</option>
+                <option value="part time">Part time</option>
+                <option value="contract">Contract</option>
+                <option value="temporary">Temporary</option>
+                <option value="internship">Internship</option>
+                <option value="volunteer">Volunteer</option>
+              </select>
+            </label>
+            <label>
+              Remote
+              <select name="remoteFilter">
+                <option value="">Any</option>
+                <option value="remote">Remote</option>
+                <option value="on site">On site</option>
+                <option value="hybrid">Hybrid</option>
+              </select>
+            </label>
+            <label>
+              Experience
+              <select name="experienceLevel">
+                <option value="">Any level</option>
+                <option value="internship">Internship</option>
+                <option value="entry level">Entry level</option>
+                <option value="associate">Associate</option>
+                <option value="senior">Senior</option>
+                <option value="director">Director</option>
+                <option value="executive">Executive</option>
+              </select>
+            </label>
+            <label>
+              Salary Filter
+              <select name="salary">
+                <option value="">No minimum</option>
+                <option value="40000">40,000+</option>
+                <option value="60000">60,000+</option>
+                <option value="80000">80,000+</option>
+                <option value="100000">100,000+</option>
+                <option value="120000">120,000+</option>
+              </select>
+            </label>
+            <label>
+              Limit
+              <input name="limit" type="number" min="1" max="100" value="25" />
+            </label>
+            <label>
+              Page
+              <input name="page" type="number" min="0" value="0" />
+            </label>
+            <label>
+              Sort
+              <select name="sortBy">
+                <option value="recent">Recent</option>
+                <option value="relevant">Relevant</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="checks">
+            <label><input name="has_verification" type="checkbox" /> Verified jobs only</label>
+            <label><input name="under_10_applicants" type="checkbox" /> Under 10 applicants</label>
+          </div>
+
+          <button id="searchButton" type="submit">Search Jobs</button>
+        </form>
+      </section>
+
+      <section class="status-row">
+        <p id="statusText">Ready.</p>
+      </section>
+
+      <section>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
